@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-xl">
+        <div class="row mt-5">
+            <div class="col-6 border border-light rounded mb-5 p-5">
+              <h2 class="text-center text-primary">Registration Form</h2>
+              <div class="form-floating m-4">
+                  <input type="username" class="form-control" id="uname" placeholder="username">
+                  <label for="floatingPassword">username</label>
+                </div>
+              <div class="form-floating m-4">
+                  <input type="text" class="form-control" id="email" placeholder="account number">
+                  <label for="floatingInput">email</label>
+                </div>
+                <div class="form-floating m-4">
+                  <input type="password" class="form-control" id="pswd" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div>
+                
+                <div class="m-4 text-center">
+                  <button type="button" class="btn btn-primary" onclick="register()">Register</button> 
+
+                </div>
+          </div>
+          
+            </div>
+               
+
+       
+    </div>
+</body>
+<script>
+    function register(){
+    const cart={
+        uname:uname.value,
+        email:email.value,
+        pswd:pswd.value,
+    }
+    if(cart.uname==""||cart.email==""||cart.pswd==""){
+alert('fill all Datas')
+    }
+    else{
+        if(cart.uname in localStorage){
+            alert('account already existed')
+        }
+        else{
+            localStorage.setItem(cart.uname,JSON.stringify(cart))
+            alert('new account created sucessfully')
+            window.location="./index3.html"
+        }
+    }
+
+}
+</script>
+</html>
